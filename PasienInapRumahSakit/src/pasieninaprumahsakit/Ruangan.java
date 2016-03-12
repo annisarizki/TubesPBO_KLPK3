@@ -10,14 +10,19 @@ package pasieninaprumahsakit;
  * @author AngkyMusa
  */
 public class Ruangan {
-    private PasienInap[100] daftarPasien ;
+    private PasienInap[] daftarPasien ;
     private String noRuang;
-    private int nPasien=1;
-    
-    public tambahPasienInap(PasienInap P, String noRuang){
+    private int nPasien;
+    private int nKapasitas;
+    public Ruangan(String noRuang, int n){
+        this.noRuang=noRuang ;
+        this.nKapasitas=n;
+        daftarPasien=new PasienInap[nKapasitas];
+    }
+    public void tambahPasienInap(PasienInap P, Dokter d){
         if(nPasien<=daftarPasien.length) {
             daftarPasien[nPasien]=P;
-            this.noRuang=noRuang;
+            daftarPasien[nPasien].setDokter(d);
             nPasien++;
         }
         else {
@@ -26,7 +31,7 @@ public class Ruangan {
     }
 
     public String getNoRuang() {
-        return noRuang;
+        return this.noRuang;
     }
 
     public void setNoRuang(String noRuang) {
@@ -40,7 +45,7 @@ public class Ruangan {
     public void setnPasien(int nPasien) {
         this.nPasien = nPasien;
     }
-    public getKapasitas(){
+    public int getKapasitas(){
         return daftarPasien.length-nPasien;
     }
     
