@@ -14,8 +14,9 @@ public class Dokter extends Orang {
 	private String spesialis;
 	private int jamKerja;
 	
-	public Dokter(String idDokter, String spesialis, int jamKerja){
-		this.idDokter = idDokter;
+	public Dokter(String idDokter, String spesialis, int jamKerja,String nama, char jenisKelamin, int umur){
+		super(nama,jenisKelamin,umur);
+                this.idDokter = idDokter;
 		this.spesialis = spesialis;
 		this.jamKerja = jamKerja;
 	}
