@@ -3,8 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
- 
- //Dibuat oleh Annisa Rizky
 package pasieninaprumahsakit;
 
 import java.util.ArrayList;
@@ -13,10 +11,11 @@ import java.util.List;
 /**
  *
  * @author ASUS PC
+ * Dibuat oleh Annisa Rizky
  */
 public class PasienInap {
     private Pasien pasien;
-	private Dokter dokter;
+    private Dokter dokter;
 	private List<String> diagnose = new ArrayList<String>();
 	private int nDiagnose;
 	
@@ -24,20 +23,19 @@ public class PasienInap {
 		this.pasien = p;
                 nDiagnose = 0;
 	}
-	
 	public void setDokter(Dokter d){
 		this.dokter = d;
 	}
-	
-	public void setPasien(Pasien p){
-		this.pasien = p;
-	}
-	
+	public Pasien getPasien(){
+            return pasien;
+        }
+        public Dokter getDokter(){
+            return this.dokter;
+        }
 	public void addDiagnosa(String d){
-		diagnose.set(nDiagnose, d);
+		diagnose.add(d);
 		nDiagnose++;
 	}
-	
 	public String getDiagnose(int i){
 		return diagnose.get(i);
 	}
@@ -45,4 +43,8 @@ public class PasienInap {
 	public void deleteDiagnose(int i){
 		diagnose.remove(i);
 	}
+        public int getNDiagnose(){
+            return diagnose.size();
+        }
+        
 }
