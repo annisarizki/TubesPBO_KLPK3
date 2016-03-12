@@ -16,10 +16,11 @@ public class PasienInap {
     private Pasien pasien;
 	private Dokter dokter;
 	private List<String> diagnose = new ArrayList<String>();
-	private int nDiagnose = 0;
+	private int nDiagnose;
 	
 	public PasienInap(Pasien p){
 		this.pasien = p;
+                nDiagnose = 0;
 	}
 	
 	public void setDokter(Dokter d){
@@ -31,12 +32,12 @@ public class PasienInap {
 	}
 	
 	public void addDiagnosa(String d){
-		this.diagnose[nDiagnose] = d;
+		diagnose.set(nDiagnose, d);
 		nDiagnose++;
 	}
 	
 	public String getDiagnose(int i){
-		return diagnose[i];
+		return diagnose.get(i);
 	}
 	
 	public void deleteDiagnose(int i){
