@@ -14,32 +14,40 @@ import java.util.List;
  */
 public class PasienInap {
     private Pasien pasien;
-	private Dokter dokter;
-	private List<String> diagnose = new ArrayList<String>();
-	private int nDiagnose = 0;
+    private Dokter dokter;
+        private List<String> diagnose = new ArrayList<String>();
+	private int nDiagnose;
 	
 	public PasienInap(Pasien p){
 		this.pasien = p;
+                nDiagnose = 0;
 	}
 	
 	public void setDokter(Dokter d){
 		this.dokter = d;
 	}
-	
 	public void setPasien(Pasien p){
 		this.pasien = p;
 	}
-	
+	public Pasien getPasien(){
+            return pasien;
+        }
+        public Dokter getDokter(){
+            return this.dokter;
+        }
 	public void addDiagnosa(String d){
-		this.diagnose[nDiagnose] = d;
+		diagnose.add(d);
 		nDiagnose++;
 	}
 	
 	public String getDiagnose(int i){
-		return diagnose[i];
+		return diagnose.get(i);
 	}
 	
 	public void deleteDiagnose(int i){
 		diagnose.remove(i);
 	}
+        public int getNDiagnose(){
+            return diagnose.size();
+        }
 }
