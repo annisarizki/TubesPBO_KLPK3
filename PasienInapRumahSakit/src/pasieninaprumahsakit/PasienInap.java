@@ -5,6 +5,9 @@
  */
 package pasieninaprumahsakit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author ASUS PC
@@ -12,7 +15,7 @@ package pasieninaprumahsakit;
 public class PasienInap {
     private Pasien pasien;
 	private Dokter dokter;
-	private String[] diagnose;
+	private List<String> diagnose = new ArrayList<String>();
 	private int nDiagnose = 0;
 	
 	public PasienInap(Pasien p){
@@ -37,6 +40,6 @@ public class PasienInap {
 	}
 	
 	public void deleteDiagnose(int i){
-		diagnose[i] = null;
+		diagnose.remove(i);
 	}
 }
