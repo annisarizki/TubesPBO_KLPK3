@@ -14,6 +14,7 @@ public class Ruangan {
     private String noRuang;
     private int nPasien;
     private int nKapasitas;
+    
     public Ruangan(String noRuang, int n){
         this.noRuang=noRuang ;
         this.nKapasitas=n;
